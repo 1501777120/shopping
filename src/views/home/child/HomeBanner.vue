@@ -1,13 +1,9 @@
 <template>
     <div>
-        <template>
             <swiper ref="mySwiper" :options="swiperOptions" class="swiper">
-
                     <swiper-slide v-for="(item,index) in bannerlist">  <a :href="item.link"><img :src="item.image" alt=""></a></swiper-slide>
-
                 <div class="swiper-pagination" slot="pagination"></div>
             </swiper>
-        </template>
     </div>
 </template>
 
@@ -15,7 +11,7 @@
     import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
     import 'swiper/css/swiper.css'
     export default {
-        name: "banner",
+        name: "HomeBanner",
         components:{
             Swiper,
             SwiperSlide,
@@ -30,22 +26,23 @@
                     autoplay:{delay:2000},
 
                 },
-                bannerlist:[]
             }
         },
-        created(){
-            this.request({
-                url:this.url.multidata,
-                method:'get'
-            }).then(res=>{
-                console.log(res)
-                this.bannerlist=res.data.banner.list
-            })
-        }
+        props:{
+          bannerlist:{
+              type:Array,
+              default(){
+                  return []
+              }
+          }
+        },
     }
 </script>
 
 <style scoped>
+    .swiper{
+        margin-bottom: 4px;
+    }
     .swiper img{
         width: 100%;
         height: 100%;

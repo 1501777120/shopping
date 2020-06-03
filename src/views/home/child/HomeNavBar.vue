@@ -9,7 +9,7 @@
 <script>
     import Navbar from '../../../components/navBar/NavBar'
     export default {
-        name: "NavBar",
+        name: "HomeNavBar",
         components:{
             Navbar
         }

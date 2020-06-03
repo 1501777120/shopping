@@ -2,15 +2,18 @@
     padding: 0;
     margin: 0;
 }
-h1,h2,h3,h4,h5,table,tr,tt,td,input,html,body{
+h1,h2,h3,h4,h5,table,tr,tt,td,input,html,body,p{
     padding: 0;
     margin: 0;
 }
 a{
     text-decoration: none;
     color: #333;
+    -webwit-tap-highlight-color:rgba(0,0,0,0);
 }
-
+.have{
+    -webwit-tap-highlight-color:rgba(0,0,0,0);
+}
 ul,li{
     list-style: none;
 }
