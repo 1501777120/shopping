@@ -1,7 +1,7 @@
 <template>
-    <div>
-            <swiper ref="mySwiper" :options="swiperOptions" class="swiper">
-                    <swiper-slide v-for="(item,index) in bannerlist">  <a :href="item.link"><img :src="item.image" alt=""></a></swiper-slide>
+    <div >
+            <swiper ref="mySwiper" :options="swiperOptions" class="swiper" >
+                    <swiper-slide v-for="(item,index) in bannerlist" :kry="index" >  <a :href="item.link"><img :src="item.image" alt="" @load="bannerLoad"></a></swiper-slide>
                 <div class="swiper-pagination" slot="pagination"></div>
             </swiper>
     </div>
@@ -36,6 +36,11 @@
               }
           }
         },
+        methods:{
+            bannerLoad(){
+                this.$emit("bannerLoad")
+            },
+        }
     }
 </script>
 

@@ -12,9 +12,9 @@ module.exports = {
             .set('views',resolve('src/views'))
     },
     devServer: {
-        host: 'localhost', // ip
-        // host: '192.168.3.247',
-        //host: '192.168.1.102', // ip
+        //host: 'localhost', // ip
+       // host: '  192.168.137.1',
+        host: '192.168.1.101', // ip
         port: 8080, // 设置端口号
         https: false, // https:{type:Boolean}
         open: true, //配置自动启动浏览器

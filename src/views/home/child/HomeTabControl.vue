@@ -1,12 +1,13 @@
 <template>
     <div class="home-tab">
-        <div v-for="(item,index) in tabControl" class="tab-control" :class="{active:index==isActive}" @click="tabClick(index)">
+        <div v-for="(item,index) in tabControl" :key="index" class="tab-control" :class="{active:index==isActive}" @click="tabClick(index)">
             <span >{{item}}</span>
         </div>
     </div>
 </template>
 
 <script>
+    const  data={ isActive:0}
     export default {
         name: "HomeTabControl",
         props:{
@@ -18,9 +19,7 @@
             }
         },
         data(){
-            return{
-                isActive:0
-            }
+            return data
         },
         methods:{
             tabClick(val){
@@ -36,8 +35,8 @@
     width: 100vw;
     display: flex;
     text-align: center;
-    margin-top: 10px;
-    margin-bottom: 14px;
+    padding-top: 10px;
+    padding-bottom: 14px;
 }
 .tab-control{
     flex: 1;

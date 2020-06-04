@@ -1,7 +1,7 @@
 <template>
     <div class="goods-show" >
         <div v-for="(item,index) in goodsshow" class="goods">
-            <img :src="item.show.img" alt="">
+            <img :src="item.show.img" alt="" @load="loadImg">
             <div class="show-bottom">
                 <p class="title">{{item.title}}</p>
                 <span class="price">￥{{item.price}} </span>
@@ -21,12 +21,23 @@
                 default(){
                     return []
                 }
+            },
+            bscrllo:{
+                type:Object,
+                default(){
+                    return {}
+                }
             }
         },
         data(){
           return{
 
           }
+        },
+        methods:{
+            loadImg(){
+                this.bscrllo.refresh()
+            },
         },
         filters:{
             showprice(val){
@@ -39,7 +50,7 @@
 <style scoped>
 .goods-show{
     display: flex;
-    justify-content: space-evenly;
+    justify-content:space-around;
     flex-wrap: wrap;
 }
     .goods{
