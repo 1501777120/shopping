@@ -1,8 +1,13 @@
 <template>
   <div id="app">
+    <keep-alive include="Home">
+      <router-view/>
+    </keep-alive>
 
-    <router-view/>
-    <tabbar-main></tabbar-main>
+    <div v-if="TabbarMainShow">
+      <tabbar-main></tabbar-main>
+    </div>
+
   </div>
 </template>
 <script>
@@ -10,12 +15,22 @@
   export  default {
       data(){
           return{
-
+              TabbarMainShow:true,
           }
       },
       components:{
           TabbarMain,
+      },
+      watch: {
+          $route(to, from) {
+              if(this.$route.path == "/productInfo") {
+                  this.TabbarMainShow = false;
+              } else {
+                  this.TabbarMainShow = true;
+              }
+          }
       }
+
   }
 </script>
 <style>

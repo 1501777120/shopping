@@ -4,6 +4,7 @@ const Home = ()=>import("views/home/Home")
 const Cart = ()=>import("views/cart/Cart")
 const Category = ()=>import("views/category/Category")
 const User = ()=>import("views/user/User")
+const ProductInfo = ()=>import("views/productInfo/ProductInfo")
 Vue.use(VueRouter)
 
   const routes = [
@@ -30,6 +31,11 @@ Vue.use(VueRouter)
           path:'/user',
           name:'User',
           component:User
+      },
+      {
+          path:'/productInfo',
+          name:'ProductInfo',
+          component:ProductInfo
       },
 ]
 

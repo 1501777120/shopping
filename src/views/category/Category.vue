@@ -1,12 +1,140 @@
 <template>
     <div>
         分类
+        <ul>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+            <li>1111</li>
+        </ul>
     </div>
 </template>
 
 <script>
     export default {
-        name: "category"
+        name: "Category"
     }
 </script>
 

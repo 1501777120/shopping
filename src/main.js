@@ -4,6 +4,8 @@ import router from './router'
 import store from './store'
 import { request } from "./network/request"
 import url from './network/url'
+
+
 /*request({
     url:'/home/multidata',
     method:'get'

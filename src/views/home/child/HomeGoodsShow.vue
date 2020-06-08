@@ -1,6 +1,6 @@
 <template>
     <div class="goods-show" >
-        <div v-for="(item,index) in goodsshow" class="goods">
+        <div v-for="(item,index) in goodsshow" class="goods" @click="productInfotap(item.iid)">
             <img :src="item.show.img" alt="" @load="loadImg">
             <div class="show-bottom">
                 <p class="title">{{item.title}}</p>
@@ -38,6 +38,12 @@
             loadImg(){
                 this.bscrllo.refresh()
             },
+            productInfotap(val){
+                this.$router.push({
+                    name:"ProductInfo",
+                    params:{id:val}
+                })
+            }
         },
         filters:{
             showprice(val){

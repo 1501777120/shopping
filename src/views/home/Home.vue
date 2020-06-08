@@ -32,7 +32,7 @@
     import NavBar from './child/HomeNavBar'
     import Banner from './child/HomeBanner'
     export default {
-        name: "home",
+        name: "Home",
         components:{
             NavBar,
             Banner,
@@ -81,8 +81,8 @@
             })
             this.bscrllo.on('scroll',(o)=>{
                 this.isBackTop=-o.y>1500
-                this.isTabControl=-o.y>this.tabControloffsetTop-this.$refs.tabControl.$el.offsetHeight
-            })
+                this.isTabControl=-o.y>this.tabControloffsetTop-45 //this.$refs.tabControl.$el.offsetHeight
+            })//下拉刷新
 
         },
         methods:{
@@ -130,8 +130,10 @@
                 this.bscrllo.scrollTo(0,0, 500,)
             },//返回顶部
 
+        },
+        destroyed(){
+            console.log("首页")
         }
-
     }
 </script>
 

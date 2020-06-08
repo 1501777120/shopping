@@ -1,5 +1,8 @@
 import axios from 'axios'
-
+import Vue from 'vue';
+import { Toast } from 'vant';
+import 'vant/lib/index.css';
+Vue.use(Toast);
 export  function request(config) {
    return new Promise((resolve,reject)=>{
        const instance = axios.create({
@@ -9,9 +12,15 @@ export  function request(config) {
            timeout:5000
        })
        instance.interceptors.request.use(config=>{
+           Toast.loading({
+               message: '加载中...',
+               forbidClick: true,
+               loadingType: 'spinner',
+           });
            return config
        }),
            instance.interceptors.response.use(data=>{
+               Toast.clear()
                return data.data
            })
        instance(config).then(res=>{
