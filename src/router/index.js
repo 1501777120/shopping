@@ -5,9 +5,21 @@ const Cart = ()=>import("views/cart/Cart")
 const Category = ()=>import("views/category/Category")
 const User = ()=>import("views/user/User")
 const ProductInfo = ()=>import("views/productInfo/ProductInfo")
+const ConfirmOrder = ()=>import("views/confirmorder/ConfirmOrder")
+const AddressList = ()=>import("views/address/AddressList")
+const AddressEdit = ()=>import("views/address/AddressEdit")
 Vue.use(VueRouter)
-
   const routes = [
+      {
+          path:'/addressEdit',
+          name:'AddressEdit',
+          component:AddressEdit
+      },
+      {
+          path:'/addressList',
+          name:'AddressList',
+          component:AddressList
+      },
       {
           path:'/',
           redirect:'/home'
@@ -36,6 +48,11 @@ Vue.use(VueRouter)
           path:'/productInfo',
           name:'ProductInfo',
           component:ProductInfo
+      },
+      {
+          path:'/confirmOrder',
+          name:'ConfirmOrder',
+          component:ConfirmOrder
       },
 ]
 

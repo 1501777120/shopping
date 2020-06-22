@@ -36,7 +36,7 @@
                 this.isCollects=!this.isCollects
             },
             tapCart(){
-                this.$router.push('/cart')
+                this.$emit('tapCart')
             }
         }
     }
@@ -46,6 +46,7 @@
 .tabBar{
     display: flex;
     height: 58px;
+    background-color: #fff;
 }
     .tabBar .left,.right{
         flex: 1;

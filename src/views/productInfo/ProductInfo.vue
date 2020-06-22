@@ -16,12 +16,16 @@
                 <product-sku-info :productSkuInfo="productSkuInfo"></product-sku-info>
             </div>
         </div>
-        <bottom-tab></bottom-tab>
-
+        <!--底部-->
+        <bottom-tab @tapCart="tapCart"></bottom-tab>
     </div>
 </template>
 
 <script>
+    import Vue from 'vue';
+    import { Toast } from 'vant';
+    import 'vant/lib/index.css';
+    Vue.use(Toast);
     import BottomTab from  './child/ProductBottomtab'
     import productSkuInfo from  './child/productSkuInfo'
     import ProductShop from  './child/ProductShop'
@@ -37,6 +41,9 @@
               imgShow:0,
               bscrllo:null,
               productId:null,
+              desc:'',
+              imUrl:'',
+              Price:'',
               bannerList:[],
               productItemInfo:{
                   title:'',
@@ -99,11 +106,27 @@
                 this.productImg=res.result.detailInfo.detailImage[0].list      //商品图片
                 this.productSkuInfo.sizeKeyList=res.result.itemParams.rule.tables[0]      //商品尺寸
                 this.productSkuInfo.setList=res.result.itemParams.info.set     //商品参数
+                this.desc=res.result.itemInfo.desc     //商品说明
+                this.imUrl=res.result.itemInfo.imUrl     //商品图片
+                this.Price=res.result.itemInfo.lowNowPrice     //商品最终价格
             })
         },
         methods:{
             imgLoadEnd(){
                 this.imgShow=this.$refs.imgShow.$el.offsetTop
+            },
+            tapCart(){
+                let CartData={
+                    count:1,
+                    iid:this.productId,
+                    Price:this.Price,
+                    title:this.productItemInfo.title,
+                    img:this.bannerList[0],
+                    desc:this.desc,
+                    isActive:true
+                }
+                this.$store.commit("addCart",CartData)
+                Toast.success('添加成功');
             }
         }
     }
@@ -112,7 +135,7 @@
 <style scoped>
     .warp{
         height: calc(100vh - 102px);
-        overflow: hidden;
         margin-top: 44px;
+        overflow: hidden;
     }
 </style>

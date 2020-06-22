@@ -1,10 +1,16 @@
 <template>
-    $END$
+    <div>
+        <nav-bar></nav-bar>
+    </div>
 </template>
 
 <script>
+    import navBar from './child/OrderNav'
     export default {
-        name: "ConfirmOrder"
+        name: "ConfirmOrder",
+        components:{
+            navBar
+        }
     }
 </script>
 

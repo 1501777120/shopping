@@ -1,13 +1,31 @@
 <template>
-    $END$
+    <div>
+        <order>
+                <div slot="left" class="left">
+                    <img src="~assets/img/common/back.svg"/>
+                    <span>确认订单</span>
+                </div>
+        </order>
+    </div>
 </template>
 
 <script>
+    import Order from '../../../components/navBar/NavBar'
     export default {
-        name: "orderNav"
+        name: "OrderNav",
+        components:{
+            Order
+        }
     }
 </script>
 
 <style scoped>
+    .left{
+        width: 100vw;
+        text-align: left;
+    }
+    .left img{
+        vertical-align: middle;
+    }
 
 </style>
