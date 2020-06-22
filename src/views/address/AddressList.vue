@@ -6,7 +6,7 @@
             </div>
             <div slot="content">我的收货地址</div>
             <div slot="right" class="right" >
-                <router-link to="/addressEdit">添加新地址</router-link>
+                <router-link to="/addressEdit">添加</router-link>
             </div>
         </nav-bar>
         <div class="warp" ref="warp">
@@ -41,9 +41,16 @@
         methods: {
             onAdd() {
                 Toast('新增地址');
+                this.$router.push("/addressEdit")
             },
             onEdit(item, index) {
-                Toast('编辑地址:' + index);
+                Toast('编辑地址:');
+                this.$router.push({
+                    name:'AddEdit',
+                    params:{
+                        index:index
+                    }
+                })
             },
         },
     }

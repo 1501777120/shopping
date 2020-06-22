@@ -4,14 +4,13 @@
             <div slot="left" >
                 <img src="../../assets/img/common/back.svg"/>
             </div>
-            <div slot="content">添加收货地址</div>
-            <div slot="right" class="right" @click="onSave">
-                保存
-            </div>
+            <div slot="content">修改收货地址</div>
+
         </nav-bar>
         <div class="warp">
             <van-address-edit
                     :area-list="areaList"
+                    :address-info="addressInfo"
                     show-postal
                     show-delete
                     show-set-default
@@ -20,7 +19,6 @@
                     :area-columns-placeholder="['请选择', '请选择', '请选择']"
                     @save="onSave"
                     @delete="onDelete"
-                    @change-detail="onChangeDetail"
             />
         </div>
     </div>
@@ -34,7 +32,7 @@
     Vue.use(AddressEdit);
     Vue.use(Toast);
     export default {
-        name: "AddressEdit",
+        name: "AddEdit",
         components:{
             navBar
         },
@@ -42,7 +40,7 @@
             return{
                 areaList,
                 searchResult: [],
-                Address:{
+                addressInfo:{
                     id:'',
                     name:'',
                     tel:'',
@@ -53,24 +51,26 @@
                 addressDetail:'',
             }
         },
+        mounted(){
+            this.addressInfo=this.$store.state.AddressList[this.$route.params.index]
+        },
         methods: {
             onSave(content) {
-                this.Address.name=content.name
-                this.Address.tel=content.tel
-                this.Address.postalCode=content.postalCode
-                this.Address.address=content.province+content.city+content.county+content.addressDetail
-                this.Address.isDefault=content.isDefault
-                this.Address.id=this.$store.state.AddressList.length+1
-                this.$store.commit("address",this.Address)
+                this.addressInfo.name=content.name
+                this.addressInfo.tel=content.tel
+                this.addressInfo.postalCode=content.postalCode
+                this.addressInfo.address=content.province+content.city+content.county+content.addressDetail
+                this.addressInfo.isDefault=content.isDefault
+                this.$store.commit("chageAddress",this.addressInfo)
                 Toast('save');
                 this.$router.replace('/addressList')
             },
             onDelete(content) {
-                Toast('delete');
+                this.$store.commit("deleteAddress",this.addressInfo)
+                Toast('删除成功');
+                this.$router.replace('/addressList')
             },
-            onChangeDetail(val) {
-                this.Address.address=val
-            },
+
         },
     }
 </script>

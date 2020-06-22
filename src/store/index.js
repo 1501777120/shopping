@@ -12,6 +12,7 @@ export default new Vuex.Store({
               id: '1',
               name: '张三',
               tel: '13000000000',
+              postalCode:'000000',
               address: '浙江省杭州市西湖区文三路 138 号东方通信大厦 7 楼 501 室',
               isDefault: true,
           },
@@ -19,7 +20,9 @@ export default new Vuex.Store({
               id: '2',
               name: '李四',
               tel: '1310000000',
+              postalCode:'000000',
               address: '浙江省杭州市拱墅区莫干山路 50 号',
+              isDefault: false,
           },
       ]
   },
@@ -69,6 +72,30 @@ export default new Vuex.Store({
               state.CartData[val].isActive=false
           }
       },//商品数量减
+      address(state,val){
+         if(val.isDefault){
+             state.AddressList.forEach((item,index)=>{
+                 item.isDefault=false
+             })
+         }
+             state.AddressList.push(val)
+
+      },//新增收货地址
+      chageAddress(state,val){
+         let addressid=val.id
+          state.AddressList.forEach((item,index)=>{
+              item.id=addressid
+              item=val
+          })
+      },//修改收货地址
+      deleteAddress(state,val){
+          state.AddressList.forEach((item,index)=>{
+              if(item.id==val.id){
+                  state.AddressList.splice(index,1)
+                  return false
+              }
+          })
+      },//删除收货地址
   },
     getters:{
         TotalProduct(state){

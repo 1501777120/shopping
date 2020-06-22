@@ -8,8 +8,14 @@ const ProductInfo = ()=>import("views/productInfo/ProductInfo")
 const ConfirmOrder = ()=>import("views/confirmorder/ConfirmOrder")
 const AddressList = ()=>import("views/address/AddressList")
 const AddressEdit = ()=>import("views/address/AddressEdit")
+const AddEdit = ()=>import("views/address/AddEdit")
 Vue.use(VueRouter)
   const routes = [
+      {
+          path:'/addEdit',
+          name:'AddEdit',
+          component:AddEdit
+      },
       {
           path:'/addressEdit',
           name:'AddressEdit',
