@@ -9,8 +9,14 @@ const ConfirmOrder = ()=>import("views/confirmorder/ConfirmOrder")
 const AddressList = ()=>import("views/address/AddressList")
 const AddressEdit = ()=>import("views/address/AddressEdit")
 const AddEdit = ()=>import("views/address/AddEdit")
+const UserOrder = ()=>import("views/userorder/Userorder")
 Vue.use(VueRouter)
   const routes = [
+      {
+          path:'/userOrder',
+          name:'UserOrder',
+          component:UserOrder
+      },
       {
           path:'/addEdit',
           name:'AddEdit',

@@ -5,7 +5,6 @@
                 <img src="../../assets/img/common/back.svg"/>
             </div>
             <div slot="content">修改收货地址</div>
-
         </nav-bar>
         <div class="warp">
             <van-address-edit

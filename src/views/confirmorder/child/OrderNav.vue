@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="nav">
         <order>
                 <div slot="left" class="left">
                     <img src="~assets/img/common/back.svg"/>
@@ -20,6 +20,9 @@
 </script>
 
 <style scoped>
+    .nav{
+        background: #fff;
+    }
     .left{
         width: 100vw;
         text-align: left;

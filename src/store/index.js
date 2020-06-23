@@ -24,9 +24,10 @@ export default new Vuex.Store({
               address: '浙江省杭州市拱墅区莫干山路 50 号',
               isDefault: false,
           },
-      ]
+      ],
+      OrderList:[],
   },
-  mutations: {
+    mutations: {
      addCart(state,val){
         if(state.CartData.length<=0){
             state.CartData.push(val)
@@ -84,8 +85,10 @@ export default new Vuex.Store({
       chageAddress(state,val){
          let addressid=val.id
           state.AddressList.forEach((item,index)=>{
-              item.id=addressid
-              item=val
+              if(item.id==addressid){
+                  item=val
+                  return
+              }
           })
       },//修改收货地址
       deleteAddress(state,val){
@@ -96,6 +99,23 @@ export default new Vuex.Store({
               }
           })
       },//删除收货地址
+      chageAddressisDefault(state,val){
+          state.AddressList.forEach((item,index)=>{
+              if(item.id==val.id){
+                  item.isDefault=true
+              } else {
+                  item.isDefault=false
+              }
+          })
+      },//修改当前收货地址
+      deletCartData(state,val){
+          state.CartData.forEach((item,index)=>{
+              if(item.isActive){
+                  state.CartData.splice(index,1)
+                  state.OrderList.push(item)
+              }
+          })
+      },//从购物车中删除已经购买的商品
   },
     getters:{
         TotalProduct(state){
@@ -106,7 +126,15 @@ export default new Vuex.Store({
               }
           })
             console.log(state.TotalPrice)
-      }
+      },
+        chosenAddressId(state){
+            state.AddressList.forEach((item,index)=>{
+                if(item.isDefault){
+                    state.chosenAddressId=item.id
+                    return
+                }
+            })
+        }
     },
   actions: {
   },

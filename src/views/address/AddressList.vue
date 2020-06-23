@@ -17,6 +17,7 @@
                         default-tag-text="默认"
                         @add="onAdd"
                         @edit="onEdit"
+                        @select="onSelect"
                 />
             </div>
         </div>
@@ -51,6 +52,11 @@
                         index:index
                     }
                 })
+            },
+            onSelect(item,index){
+                console.log(item);
+                this.$store.commit('chageAddressisDefault',item)
+                this.$router.push('/ConfirmOrder')
             },
         },
     }

@@ -7,6 +7,9 @@
 </template>
 
 <script>
+    import Vue from 'vue';
+    import { Toast } from 'vant';
+    Vue.use(Toast);
     export default {
         name: "CartTabBar",
         data(){
@@ -17,14 +20,17 @@
 
         methods:{
             onSubmit(){
-               console.log(123)
-                this.$router.push({
-                    name:"ConfirmOrder",
-
-                })
+                if(this.$store.state.CartData.length==0){
+                    Toast('当前购物车还没有商品，快去添加吧');
+                    return false
+                }else {
+                    this.$router.push({
+                        name:"ConfirmOrder",
+                    })
+                }
             },
             isChecked(){
-                this.$store.commit('publicActive')
+                    this.$store.commit('publicActive')
             }
         },
 

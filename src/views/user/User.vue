@@ -3,7 +3,7 @@
         <user-nav></user-nav>
         <div class="warp">
             <ul >
-                <li class="item"><router-link to="">我的订单</router-link></li>
+                <li class="item"><router-link to="/userOrder">我的订单</router-link></li>
                 <li class="item"><router-link to="/addressList">地址管理</router-link></li>
             </ul>
         </div>
